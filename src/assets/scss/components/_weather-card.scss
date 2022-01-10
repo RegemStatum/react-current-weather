@@ -1,0 +1,33 @@
+@use "../abstracts" as *;
+
+.weather-card {
+  min-width: 15rem;
+  padding: 2.5rem 1.5rem;
+  background-color: getColor();
+  border-radius: 5px;
+  box-shadow: 0 0 3px getColor("second-color"),
+    0 0 10px getColor("second-color");
+  text-align: center;
+
+  div {
+    width: 90%;
+    margin: 0.4rem auto 0 auto;
+    display: flex;
+    justify-content: center;
+    p {
+      align-self: center;
+      width: 64px;
+    }
+    border-bottom: 1px solid getColor("bg-color");
+  }
+
+  p {
+    color: getColor("heading-color");
+    text-shadow: none;
+    font-weight: 600;
+  }
+
+  h2 {
+    text-shadow: none;
+  }
+}

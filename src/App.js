@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 // Pages
-import { HomePage, ErrorPage } from "./pages";
+import { HomePage, ErrorPage, FeedbackPage } from "./pages";
 // Scss
 import "./assets/scss/index.scss";
 
@@ -15,6 +15,7 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<HomePage />}></Route>
+        <Route path="/feedback" element={<FeedbackPage />}></Route>
         <Route path="*" element={<ErrorPage />}></Route>
       </Routes>
       <Footer />

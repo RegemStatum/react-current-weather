@@ -5,10 +5,10 @@ const Error = () => {
   const msg = useGlobalContext();
 
   return (
-    <div>
+    <section className="container error-page">
       <h1>Error Page</h1>
       <h2>{msg}</h2>
-    </div>
+    </section>
   );
 };
 

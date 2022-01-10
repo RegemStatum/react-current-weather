@@ -1,0 +1,15 @@
+@use "../abstracts" as *;
+
+.weather-cards {
+  @include sectionPadding;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 2rem;
+
+  @include md {
+    grid-template-columns: 1fr 1fr;
+  }
+  @include lg {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}

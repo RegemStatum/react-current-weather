@@ -1,0 +1,32 @@
+@use "../abstracts/" as *;
+
+.footer {
+  // @include md {
+  //   display: flex;
+  //   align-items: center;
+  // }
+  min-height: 3rem;
+  padding: 0.5rem 0;
+  @include sectionPadding;
+
+  p {
+    padding: 0.08rem 0;
+  }
+
+  p:first-child {
+    margin-right: 0.5rem;
+  }
+
+  p:last-child {
+    text-transform: capitalize;
+
+    a:hover {
+      color: getColor("second-color");
+    }
+  }
+
+  span {
+    text-decoration: none;
+    color: getColor("second-color");
+  }
+}

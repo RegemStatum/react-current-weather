@@ -1,6 +1,11 @@
 @use "./functions" as *;
 
-@mixin container($max-width: 940px) {
+@mixin container_xs() {
+  width: 95%;
+  margin: 0 auto;
+}
+
+@mixin container_sm($max-width: 940px) {
   max-width: $max-width;
   width: 90%;
   margin: 0 auto;
@@ -30,7 +35,7 @@
 }
 
 @mixin sectionPadding() {
-  padding: getPadding(900) 0;
+  padding: getPadding(600) 0;
 }
 
 @mixin headingUnderscore() {
@@ -51,4 +56,8 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
+}
+
+@mixin textShadow($color: getColor("text-color")) {
+  text-shadow: $color 0 0 7px;
 }

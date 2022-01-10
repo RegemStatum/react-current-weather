@@ -1,3 +1,3 @@
-const TEST = "TEST";
+const CHANGING_PAGE = "CHANGING_PAGE";
 
-export { TEST };
+export { CHANGING_PAGE };

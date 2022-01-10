@@ -1,0 +1,29 @@
+@use "../abstracts" as *;
+
+.search-form {
+  @include sectionPadding;
+
+  label {
+    display: block;
+    font-family: "Roboto", sans-serif;
+    padding: 0.5rem 0 0.3rem 0;
+  }
+
+  .form-input {
+    display: flex;
+
+    input {
+      height: auto;
+    }
+
+    .btn-submit {
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+      margin-left: 0.4rem;
+
+      &:hover {
+        box-shadow: 0 0 3px getColor("second-color");
+      }
+    }
+  }
+}

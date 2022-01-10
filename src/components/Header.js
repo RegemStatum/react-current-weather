@@ -1,10 +1,15 @@
 import React from "react";
+import { TiWeatherPartlySunny } from "react-icons/ti";
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <div>
-      <h1>Hello from Header</h1>
-    </div>
+    <header className="container header">
+      <Link to="/" className="logo-container">
+        <TiWeatherPartlySunny className="header-logo" />
+        <h1>Weather forecast</h1>
+      </Link>
+    </header>
   );
 };
 

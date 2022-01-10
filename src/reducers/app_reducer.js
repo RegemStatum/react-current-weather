@@ -1,11 +1,11 @@
+import { useLocation } from "react-router-dom";
 // actions
-import { TEST } from "../actions";
+import { CHANGING_PAGE } from "../actions";
 
 const reducer = (state, action) => {
-  if ((action.type = TEST)) {
+  if (action.type === CHANGING_PAGE) {
     return {
       ...state,
-      test: true,
     };
   }
   throw new Error(`no such as ${action.type} action type`);
