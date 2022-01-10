@@ -7,7 +7,7 @@ const Header = () => {
     <header className="container header">
       <Link to="/" className="logo-container">
         <TiWeatherPartlySunny className="header-logo" />
-        <h1>Weather forecast</h1>
+        <h1>Current Weather</h1>
       </Link>
     </header>
   );

@@ -11,7 +11,8 @@
 
   div {
     width: 90%;
-    margin: 0.4rem auto 0 auto;
+    margin: 0.5rem auto;
+    padding-bottom: 0.5rem;
     display: flex;
     justify-content: center;
     p {
@@ -24,7 +25,15 @@
   p {
     color: getColor("heading-color");
     text-shadow: none;
-    font-weight: 600;
+    span {
+      font-weight: 600;
+    }
+  }
+
+  .temperature,
+  .temperature-feels-like,
+  .wind {
+    width: 283px;
   }
 
   h2 {

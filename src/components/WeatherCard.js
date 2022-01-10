@@ -1,21 +1,29 @@
 import React from "react";
 
-const WeatherCard = () => {
+const WeatherCard = ({
+  name,
+  icon,
+  time,
+  temperature,
+  temperatureFeelsLike,
+  wind,
+}) => {
   return (
     <article className="weather-card">
-      <h2 className="city-name">Kiev</h2>
+      <h2 className="city-name">{name}</h2>
       <div>
-        <img
-          className="weather-icon"
-          src="//cdn.weatherapi.com/weather/64x64/night/122.png"
-          alt="weather"
-        />
-        <p className="time">18:15</p>
+        <img className="weather-icon" src={icon} alt="weather" />
+        <p className="time">{time}</p>
       </div>
-
-      <p className="temperature">Temperature (C): 8.0</p>
-      <p className="temperature-feels-like">Feels like: 6.9</p>
-      <p className="wind">Wind (kph): 11.2</p>
+      <p className="temperature">
+        Temperature (C): <span>{temperature}</span>
+      </p>
+      <p className="temperature-feels-like">
+        Feels like: <span>{temperatureFeelsLike}</span>
+      </p>
+      <p className="wind">
+        Wind (kph): <span>{wind}</span>
+      </p>
     </article>
   );
 };

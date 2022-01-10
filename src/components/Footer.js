@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer className="container footer">
       <p>
-        &copy; {new Date().getFullYear()} <span>Weather Forecast App</span>
+        &copy; {new Date().getFullYear()} <span>Current Weather App</span>
       </p>
       <p>
         created by{" "}
