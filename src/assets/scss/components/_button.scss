@@ -1,0 +1,20 @@
+@use "../abstracts" as *;
+@use "../base/fonts" as *;
+
+@mixin btn($color: getColor("second-color")) {
+  padding: 0.6rem 1rem;
+  border: 1px solid $color;
+  border-radius: 0.15rem;
+  background-color: transparent;
+  font-family: "Roboto", sans-serif;
+  font-size: getFontSize(300);
+  font-weight: 600;
+  text-transform: uppercase;
+  color: $color;
+  cursor: pointer;
+  @include defTransition;
+
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+}

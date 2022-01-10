@@ -1,0 +1,18 @@
+@use "./colors" as *;
+@use "../base/typography" as *;
+
+@function getColor($color: "first-color") {
+  @return map-get($colors, $color);
+}
+
+@function getFontSize($size: 400) {
+  @return map-get($font-sizes, $size);
+}
+
+@function getPadding($padding: 400) {
+  @return map-get($paddings, $padding);
+}
+
+@function getMargin($margin: 400) {
+  @return map-get($margins, $margin);
+}

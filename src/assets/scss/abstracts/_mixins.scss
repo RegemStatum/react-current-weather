@@ -1,0 +1,54 @@
+@use "./functions" as *;
+
+@mixin container($max-width: 940px) {
+  max-width: $max-width;
+  width: 90%;
+  margin: 0 auto;
+}
+
+@mixin ref($font-size: 400, $color: "first-color") {
+  font-size: getFontSize($font-size);
+  font-weight: 600;
+  color: getColor($color);
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+@mixin center() {
+  text-align: center;
+  margin: 0 auto;
+}
+
+@mixin defTransition($property: all, $time: 0.3s) {
+  transition: $property $time ease-in-out;
+}
+
+@mixin posAbsolute() {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+@mixin sectionPadding() {
+  padding: getPadding(900) 0;
+}
+
+@mixin headingUnderscore() {
+  @include posAbsolute;
+  top: initial;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  content: "";
+  width: 3.2rem;
+  height: 0.15rem;
+  opacity: 0.5;
+  background-color: getColor("text-color");
+}
+
+@mixin backgroundImage($path: "") {
+  background-image: url($path);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

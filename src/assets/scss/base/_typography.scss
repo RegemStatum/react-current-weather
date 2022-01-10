@@ -1,0 +1,53 @@
+@use "../abstracts/breakpoints" as *;
+
+@include breakpoint {
+  $base-font-size: 0.8rem;
+}
+
+@include md {
+  $base-font-size: 1rem;
+}
+// comment above ??
+
+$base-font-size: 1rem;
+$font-sizes: (
+  100: $base-font-size * 0.25,
+  200: $base-font-size * 0.5,
+  300: $base-font-size * 0.75,
+  400: $base-font-size * 1,
+  500: $base-font-size * 1.25,
+  600: $base-font-size * 1.5,
+  700: $base-font-size * 2,
+  800: $base-font-size * 2.5,
+  900: $base-font-size * 3,
+  xl: $base-font-size * 4,
+);
+
+$base-padding: 1rem;
+$paddings: (
+  100: $base-padding * 0.25,
+  200: $base-padding * 0.5,
+  300: $base-padding * 0.75,
+  400: $base-padding * 1,
+  500: $base-padding * 1.25,
+  600: $base-padding * 1.5,
+  700: $base-padding * 2,
+  800: $base-padding * 2.5,
+  900: $base-padding * 3,
+  xl: $base-padding * 4,
+  xxl: $base-padding * 5,
+);
+
+$base-margin: 1rem;
+$margins: (
+  100: $base-margin * 0.25,
+  200: $base-margin * 0.5,
+  300: $base-margin * 0.75,
+  400: $base-margin * 1,
+  500: $base-margin * 1.25,
+  600: $base-margin * 1.5,
+  700: $base-margin * 2,
+  800: $base-margin * 2.5,
+  900: $base-margin * 3,
+  xl: $base-margin * 4,
+);

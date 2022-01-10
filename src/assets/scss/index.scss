@@ -1,0 +1,58 @@
+@use "./abstracts" as *;
+@use "./base" as *;
+@use "./components" as *;
+// @use "./layout" as *;
+// @use "./pages/" as *;
+
+//GLOBAL_STYLES
+body {
+  background-color: getColor();
+
+  .btn {
+    @include btn;
+  }
+
+  @include sm {
+    .container {
+      @include container;
+    }
+  }
+
+  .center {
+    @include center;
+  }
+
+  @include breakpoint {
+    p {
+      font-family: "Roboto", sans-serif;
+      font-size: getFontSize(400);
+      font-weight: 300;
+      color: getColor("text-color");
+      line-height: 24px;
+    }
+
+    h1 {
+      padding-bottom: getPadding(700);
+      font-family: "Playfair Display", serif;
+      font-size: getFontSize(700);
+      font-weight: 900;
+      text-transform: capitalize;
+    }
+
+    h2 {
+      font-family: "Playfair Display", serif;
+      font-size: getFontSize(600);
+      color: getColor("heading-color");
+      font-weight: 900;
+      text-transform: uppercase;
+    }
+
+    h4 {
+      font-family: "Roboto", sans-serif;
+      font-size: 0.9rem;
+      letter-spacing: -0.01rem;
+      color: getColor("heading-color");
+      font-weight: 900;
+    }
+  }
+}
