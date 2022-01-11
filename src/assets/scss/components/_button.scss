@@ -19,3 +19,9 @@
     background-color: rgba(0, 0, 0, 0.2);
   }
 }
+
+@mixin btnSubmit() {
+  &:hover {
+    box-shadow: 0 0 3px getColor("second-color");
+  }
+}

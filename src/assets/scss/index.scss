@@ -2,7 +2,7 @@
 @use "./base" as *;
 @use "./components" as *;
 @use "./layout" as *;
-// @use "./pages/" as *;
+@use "./pages/" as *;
 
 //GLOBAL_STYLES
 body {
@@ -11,6 +11,10 @@ body {
 
   .btn {
     @include btn;
+  }
+
+  .btn-submit {
+    @include btnSubmit;
   }
 
   .container {

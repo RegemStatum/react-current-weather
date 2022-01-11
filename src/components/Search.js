@@ -1,15 +1,20 @@
 import React, { useState } from "react";
 // actions
-import { SET_SEARCH_CITY } from "../actions";
+import { SET_SEARCH_CITY, ADD_CITY_WEATHER } from "../actions";
+
 import { useGlobalContext } from "../context/app_context";
+
+const weatherApiKey = process.env.REACT_APP_WEATHER_API_KEY;
 
 const Search = () => {
   const [searchValue, setSearchValue] = useState("");
-  const { dispatch } = useGlobalContext();
+  const { dispatch, fetchCityWeather } = useGlobalContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch({ type: SET_SEARCH_CITY, payload: searchValue });
+    let url = `https://api.weatherapi.com/v1/current.json?key=${weatherApiKey}&q=${searchValue}&aqi=no`;
+    fetchCityWeather(url);
+    setSearchValue("");
   };
 
   return (

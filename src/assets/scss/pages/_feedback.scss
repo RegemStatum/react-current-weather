@@ -1,0 +1,60 @@
+@use "../abstracts/" as *;
+
+$max-form-width: 320px;
+
+.feedback-page {
+  @include sectionPadding;
+  min-height: calc(100vh - 240px);
+
+  h2 {
+    color: getColor();
+  }
+
+  form {
+    width: 90%;
+    max-width: $max-form-width;
+    .form-input {
+      margin-top: getMargin();
+
+      &:first-child {
+        margin-top: getMargin(500);
+      }
+
+      &:nth-child(3) {
+        margin-bottom: getMargin(300);
+      }
+
+      label {
+        display: block;
+        padding-bottom: getPadding(100);
+        font-size: getFontSize(500);
+        font-family: "Roboto", sans-serif;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: getPadding(200);
+        font-family: "Roboto", sans-serif;
+        color: getColor("bg-color");
+
+        &::placeholder {
+          font-size: getFontSize(350);
+          font-family: "Roboto", sans-serif;
+        }
+      }
+
+      textarea {
+        resize: vertical;
+        min-height: 150px;
+        max-height: 320px;
+        padding-top: getPadding(300);
+      }
+    }
+
+    .btn {
+      width: 100%;
+      font-size: getFontSize(400);
+    }
+  }
+}

@@ -14,16 +14,14 @@
 
     input {
       height: auto;
+      font-family: "Roboto", sans-serif;
+      color: getColor("bg-color");
     }
 
     .btn-submit {
       padding-top: 0.5rem;
       padding-bottom: 0.5rem;
       margin-left: 0.4rem;
-
-      &:hover {
-        box-shadow: 0 0 3px getColor("second-color");
-      }
     }
   }
 }

@@ -1,6 +1,7 @@
 // actions
 import {
   ADD_CITY_WEATHER,
+  BAD_REQUEST,
   END_OF_LOADING,
   ERROR_OCCURED,
   SET_SEARCH_CITY,
@@ -31,14 +32,18 @@ const reducer = (state, action) => {
       wind,
     };
 
+    let newCitiesWeather = state.citiesWeather.filter((city) => {
+      return newCityWeather.name !== city.name;
+    });
+
     return {
       ...state,
-      citiesWeather: [...state.citiesWeather, newCityWeather],
+      citiesWeather: [newCityWeather, ...newCitiesWeather],
       currentCityWeather: newCityWeather,
     };
   }
   if (action.type === SET_SEARCH_CITY) {
-    console.log(action.payload);
+    console.log("search city : ", action.payload);
     return {
       ...state,
       searchCity: action.payload,
@@ -48,6 +53,8 @@ const reducer = (state, action) => {
     return {
       ...state,
       isLoading: false,
+      isError: false,
+      isBadRequest: false,
     };
   }
   if (action.type === ERROR_OCCURED) {
@@ -55,6 +62,13 @@ const reducer = (state, action) => {
       ...state,
       isLoading: false,
       isError: true,
+    };
+  }
+  if (action.type === BAD_REQUEST) {
+    return {
+      ...state,
+      isLoading: false,
+      isBadRequest: true,
     };
   }
   throw new Error(`no such as ${action.type} action type`);

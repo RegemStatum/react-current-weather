@@ -1,0 +1,5 @@
+@use "../abstracts/" as *;
+
+.home-page {
+  min-height: calc(100vh - 240px);
+}

@@ -5,8 +5,14 @@ import WeatherCard from "./WeatherCard";
 const weatherApiKey = process.env.REACT_APP_WEATHER_API_KEY;
 
 const WeatherCards = () => {
-  const { defaultCities, isLoading, isError, fetchCityWeather, citiesWeather } =
-    useGlobalContext();
+  const {
+    defaultCities,
+    isLoading,
+    isError,
+    isBadRequest,
+    fetchCityWeather,
+    citiesWeather,
+  } = useGlobalContext();
 
   const fetchDefaultCitiesWeather = async () => {
     defaultCities.forEach(async (cityName) => {
@@ -27,11 +33,14 @@ const WeatherCards = () => {
   }
 
   return (
-    <section className="weather-cards">
-      {citiesWeather.map((city, index) => (
-        <WeatherCard key={index} {...city} />
-      ))}
-    </section>
+    <>
+      {isBadRequest && <h3>Bad request, try another city!</h3>}
+      <section className="weather-cards">
+        {citiesWeather.map((city, index) => (
+          <WeatherCard key={index} {...city} />
+        ))}
+      </section>
+    </>
   );
 };
 
