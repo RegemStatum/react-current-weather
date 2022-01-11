@@ -1,14 +1,11 @@
 import React, { useState } from "react";
-// actions
-import { SET_SEARCH_CITY, ADD_CITY_WEATHER } from "../actions";
-
 import { useGlobalContext } from "../context/app_context";
 
 const weatherApiKey = process.env.REACT_APP_WEATHER_API_KEY;
 
 const Search = () => {
   const [searchValue, setSearchValue] = useState("");
-  const { dispatch, fetchCityWeather } = useGlobalContext();
+  const { fetchCityWeather } = useGlobalContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();

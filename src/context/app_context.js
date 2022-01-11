@@ -1,4 +1,4 @@
-import React, { useContext, useReducer, useEffect } from "react";
+import React, { useContext, useReducer } from "react";
 // reducer
 import reducer from "../reducers/app_reducer";
 // actions

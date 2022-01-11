@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useCallback } from "react";
 import { useGlobalContext } from "../context/app_context";
 import WeatherCard from "./WeatherCard";
 
@@ -14,15 +14,16 @@ const WeatherCards = () => {
     citiesWeather,
   } = useGlobalContext();
 
-  const fetchDefaultCitiesWeather = async () => {
+  const fetchDefaultCitiesWeather = useCallback(async () => {
     defaultCities.forEach(async (cityName) => {
       let url = `https://api.weatherapi.com/v1/current.json?key=${weatherApiKey}&q=${cityName}&aqi=no`;
       await fetchCityWeather(url);
     });
-  };
+  }, [defaultCities, fetchCityWeather]);
 
   useEffect(() => {
     fetchDefaultCitiesWeather();
+    // eslint-disable-next-line
   }, []);
 
   if (isLoading) {

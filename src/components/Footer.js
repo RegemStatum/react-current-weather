@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -9,7 +9,11 @@ const Footer = () => {
       </p>
       <p>
         created by{" "}
-        <a href="https://github.com/RegemStatum" target="_blank">
+        <a
+          href="https://github.com/RegemStatum"
+          target="_blank"
+          rel="noreferrer"
+        >
           <span> Al_Kon</span>
         </a>
       </p>
